@@ -1,12 +1,10 @@
-function Home() {
+function Contact() {
   return (
     <div style={{ margin: "1rem", padding: "1rem" }}>
-      <h2 style={{ fontSize: "48px" }}>Hello !</h2>
-      <p style={{ fontSize: "48px" }}>
-        I'm Vong Jordan - React.js designer and devloper, based in Orléans,
-        France
+      <h3 style={{ fontSize: "32px" }}>Contact</h3>
+      <p style={{ textAlign: "justify", lineHeight: "1.6", maxWidth: "800px" }}>
+        Let's Work Together !
       </p>
-
       <div className="navBar">
         <div className="navbarContainer" style={{ justifyContent: "start" }}>
           <p>Github</p>
@@ -18,4 +16,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Contact;
