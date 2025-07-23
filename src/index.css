@@ -1,53 +1,109 @@
+/* ----- DARK MODE ----- */
+.dark-mode {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark-mode .span {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+.dark-mode .navbar {
+  background: linear-gradient(to bottom, #2a2a2a, #1e1e1e);
+  color: #f0f0f0;
+}
+
+.dark-mode .projectCard img {
+  border: 1px solid #555;
+}
+
+.dark-mode .footer {
+  background: linear-gradient(to top, #2c2c2c, #1e1e1e);
+  color: #f0f0f0;
+}
+
+/* ----- RESET ----- */
 body {
-  /* background-color: #e9c46a;
-  accent-color: #264653; */
   background-color: #f0f4f8;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
 
+/* ----- LAYOUT WRAPPER ----- */
+.sectionWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ----- BUTTON ----- */
 .btn {
   display: inline-block;
-  background-color: #0070f3;
+  background-color: #c4b6a6;
   color: white;
   padding: 0.75rem 1.25rem;
   border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
   font-weight: bold;
 }
-
 .btn:hover {
-  background-color: #005bb5;
+  background-color: #b5a795;
+  transform: translateY(-2px);
 }
 
+/* ----- BURGER MENU ----- */
+.burger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.burger img {
+  width: 24px;
+}
+
+/* ----- NAVBAR ----- */
 .navbar {
   background: linear-gradient(to bottom, #c4b6a6, #f0f4f8);
   color: #666666;
-  margin-left: auto;
-  margin-right: auto;
   padding: 1.5rem;
   border: none;
+}
+
+.navbarTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modeToggle {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modeToggle:hover {
+  transform: scale(1.1);
 }
 
 .navbarContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 4rem;
 }
-
-.navbarContainer p {
+.navbarContainer span {
   cursor: pointer;
   transition: color 0.2s ease;
 }
-
-.navbarContainer p:hover {
-  color: #0070f3;
+.navbarContainer span:hover {
+  color: #b5a795;
 }
 
+/* ----- PROJECT LIST ----- */
 .projectContainer {
   display: flex;
   flex-wrap: wrap;
@@ -58,28 +114,84 @@ body {
 }
 
 .projectCard {
-  width: 300px;
-  max-width: 90vw;
+  width: 100%;
+  max-width: 400px;
   padding: 2rem;
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
 }
-
 .projectCard img {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   border: 1px solid #ddd;
   border-radius: 6px;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
 .projectCard img:hover {
   transform: scale(1.05);
   border-color: #aaa;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- FOOTER ----- */
+
+.footer {
+  background: linear-gradient(to top, #c4b6a6, #f0f4f8);
+  padding: 1.5rem;
+  color: #666666;
+  text-align: center;
+}
+
+/* ----- RESPONSIVE (TABLETTE / MOBILE) ----- */
+@media (max-width: 768px) {
+  .sectionWrapper {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .burger {
+    display: block;
+    text-align: right;
+  }
+
+  .navbarContainer {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .navbarContainer.show {
+    display: flex;
+  }
+}
+
+/* ----- DESKTOP ONLY ----- */
+@media (min-width: 769px) {
+  .navbarContainer {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4rem;
+  }
+
+  .burger {
+    display: none;
+  }
 }

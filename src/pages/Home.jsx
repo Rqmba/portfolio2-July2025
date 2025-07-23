@@ -1,17 +1,17 @@
+import SocialLinks from "../components/SocialLinks";
+
 function Home() {
   return (
-    <div style={{ margin: "1rem", padding: "1rem" }}>
-      <h2 style={{ fontSize: "48px" }}>Hello !</h2>
-      <p style={{ fontSize: "48px" }}>
+    <div className="sectionWrapper">
+      <h2>Hello !</h2>
+      <p>
         I'm Vong Jordan - React.js designer and devloper, based in Orléans,
         France
       </p>
 
       <div className="navBar">
         <div className="navbarContainer" style={{ justifyContent: "start" }}>
-          <p>Github</p>
-          <p>LinkedIn</p>
-          <p>Blog</p>
+          <SocialLinks />
         </div>
       </div>
     </div>
