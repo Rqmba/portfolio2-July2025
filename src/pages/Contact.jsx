@@ -2,7 +2,7 @@ import SocialLinks from "../components/SocialLinks";
 
 function Contact() {
   return (
-    <div className="sectionWrapper">
+    <section id="contact" className="sectionWrapper">
       <h2>Contact</h2>
       <p style={{ textAlign: "justify", lineHeight: "1.6", maxWidth: "800px" }}>
         Let's Work Together !
@@ -12,7 +12,7 @@ function Contact() {
           <SocialLinks />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

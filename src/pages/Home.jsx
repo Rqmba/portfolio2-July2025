@@ -2,8 +2,8 @@ import SocialLinks from "../components/SocialLinks";
 
 function Home() {
   return (
-    <div className="sectionWrapper">
-      <h2>Hello !</h2>
+    <section id="section" className="sectionWrapper">
+      <h1>Hello !</h1>
       <p>
         I'm Vong Jordan - React.js designer and devloper, based in Orléans,
         France
@@ -14,7 +14,7 @@ function Home() {
           <SocialLinks />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

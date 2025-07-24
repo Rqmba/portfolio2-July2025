@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar({ darkMode, setDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,6 +8,14 @@ function Navbar({ darkMode, setDarkMode }) {
     <header>
       <nav className="navbar">
         <div className="navbarTop">
+          <div className="modeToggle" onClick={() => setDarkMode(!darkMode)}>
+            <img
+              src={darkMode ? "/assets/sun.svg" : "/assets/moon.svg"}
+              alt="Toggle dark mode"
+              style={{ width: "24px" }}
+            />
+          </div>
+
           <div className="burger" onClick={() => setIsOpen(!isOpen)}>
             <img
               alt={isOpen ? "close" : "burger"}
@@ -15,23 +24,34 @@ function Navbar({ darkMode, setDarkMode }) {
               }
             />
           </div>
-          <div
-            className="modeToggle"
-            onClick={() => setDarkMode(!darkMode)}
-            style={{ cursor: "pointer" }}
-          >
-            <img
-              src={darkMode ? "/assets/sun.svg" : "/assets/moon.svg"}
-              alt="Toggle dark mode"
-              style={{ width: "24px" }}
-            />
-          </div>
         </div>
 
         <div className={`navbarContainer ${isOpen ? "show" : ""}`}>
-          <span onClick={() => setIsOpen(false)}>Projects</span>
-          <span onClick={() => setIsOpen(false)}>About</span>
-          <span onClick={() => setIsOpen(false)}>Contact</span>
+          <Link to="/" onClick={() => setIsOpen(false)} className="btnSocial">
+            Home
+          </Link>
+
+          <a
+            href="#projects"
+            onClick={() => setIsOpen(false)}
+            className="btnSocial"
+          >
+            Projects
+          </a>
+          <a
+            href="#about"
+            onClick={() => setIsOpen(false)}
+            className="btnSocial"
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="btnSocial"
+          >
+            Contact
+          </a>
         </div>
       </nav>
     </header>

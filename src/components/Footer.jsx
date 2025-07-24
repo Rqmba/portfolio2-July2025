@@ -3,10 +3,9 @@ import React from "react";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="navbarContainer">
-        {" "}
-        <p>Mabe by Vong Jordan</p>
-      </div>
+      <p className="footerText">
+        © {new Date().getFullYear()} Jordan Vong — Built with React.js
+      </p>
     </footer>
   );
 }

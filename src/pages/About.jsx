@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="sectionWrapper">
+    <section id="about" className="sectionWrapper">
       <h2>About me</h2>
       <p style={{ textAlign: "justify", lineHeight: "1.6", maxWidth: "800px" }}>
         I'm Vong Jordan, a junior React.js developer based in France. I hold a
@@ -11,7 +11,7 @@ function About() {
         expertise, and eventually put my projects to use for clients or real
         users.
       </p>
-    </div>
+    </section>
   );
 }
 

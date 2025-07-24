@@ -14,13 +14,45 @@
   color: #f0f0f0;
 }
 
+.dark-mode .projectCard {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
 .dark-mode .projectCard img {
   border: 1px solid #555;
+}
+
+.dark-mode .textProjectCard {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  box-shadow: none;
+}
+
+.dark-mode .textProjectDescription {
+  color: #ccc;
+}
+
+.dark-mode .textProjectRole {
+  color: #aaa;
+}
+
+.dark-mode .textProjectSkills span {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+.dark-mode .textProjectPeriod {
+  color: #888;
 }
 
 .dark-mode .footer {
   background: linear-gradient(to top, #2c2c2c, #1e1e1e);
   color: #f0f0f0;
+}
+
+.dark-mode .footerText {
+  color: #ccc;
 }
 
 /* ----- RESET ----- */
@@ -49,8 +81,22 @@ body {
   transition: background-color 0.2s ease, transform 0.2s ease;
   font-weight: bold;
 }
+
 .btn:hover {
   background-color: #b5a795;
+  transform: translateY(-2px);
+}
+
+.btnSocial {
+  display: inline-block;
+  color: #666666;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.btnSocial:hover {
+  color: white;
   transform: translateY(-2px);
 }
 
@@ -74,7 +120,7 @@ body {
 
 .navbarTop {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -90,10 +136,11 @@ body {
 
 .navbarContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  gap: 4rem;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 .navbarContainer span {
   cursor: pointer;
@@ -103,50 +150,126 @@ body {
   color: #b5a795;
 }
 
+.navbarTop {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.rightIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* ----- PROJECT LIST ----- */
 .projectContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
-  margin: 2rem;
 }
 
 .projectCard {
-  width: 100%;
-  max-width: 400px;
-  padding: 2rem;
-  margin: 1rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  padding: 1.5rem;
+  margin: 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
 .projectCard img {
   width: 100%;
   height: auto;
-  border: 1px solid #ddd;
   border-radius: 6px;
   object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid #ddd;
 }
+
 .projectCard img:hover {
   transform: scale(1.05);
   border-color: #aaa;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ----- TEXT PROJECT CARD ----- */
+
+.textProjectContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2 rem;
+  padding: 2rem 1rem;
+  /* max-width: 800px;
+  margin: 0 auto; */
+}
+
+.textProjectCard {
+  width: 100%;
+  max-width: 800px;
+  border-left: 3px solid #c4b6a6;
+  padding: 1rem 1rem 1rem 1.25rem;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: background-color 0.3s ease;
+}
+
+.textProjectCard:hover {
+  background-color: rgba(196, 182, 166, 0.1);
+}
+
+.textProjectTitle {
+  font-size: 18px;
+  margin-bottom: 0.2rem;
+}
+
+.textProjectRole {
+  font-size: 14px;
+  margin-bottom: 0.3rem;
+}
+
+.textProjectDescription {
+  font-size: 13.5px;
+  margin-bottom: 0.4rem;
+}
+
+.textProjectSkills span {
+  background-color: #c4b6a6;
+  color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px 6px;
+}
+
+.textProjectPeriod {
+  font-size: 14px;
+  margin-top: 1.3rem;
+}
+
 /* ----- FOOTER ----- */
 
 .footer {
   background: linear-gradient(to top, #c4b6a6, #f0f4f8);
-  padding: 1.5rem;
+  padding: 2rem 1rem;
   color: #666666;
   text-align: center;
+}
+
+.footerText {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
 }
 
 /* ----- RESPONSIVE (TABLETTE / MOBILE) ----- */
@@ -165,7 +288,7 @@ body {
 
   .burger {
     display: block;
-    text-align: right;
+    /* text-align: right; */
   }
 
   .navbarContainer {
@@ -179,10 +302,22 @@ body {
   .navbarContainer.show {
     display: flex;
   }
+
+  .navbarTop {
+    justify-content: space-between;
+  }
+
+  .modeToggle {
+    align-self: flex-end;
+  }
 }
 
 /* ----- DESKTOP ONLY ----- */
 @media (min-width: 769px) {
+  .navbarTop {
+    justify-content: space-between;
+  }
+
   .navbarContainer {
     display: flex !important;
     flex-direction: row;
@@ -193,5 +328,9 @@ body {
 
   .burger {
     display: none;
+  }
+
+  .modeToggle {
+    margin-right: auto;
   }
 }
