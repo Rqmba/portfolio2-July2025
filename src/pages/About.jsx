@@ -1,8 +1,8 @@
 function About() {
   return (
-    <section id="about" className="sectionWrapper">
+    <section id="about">
       <h2>About me</h2>
-      <p style={{ textAlign: "justify", lineHeight: "1.6", maxWidth: "800px" }}>
+      <p className="sectionText">
         I'm Vong Jordan, a junior React.js developer based in France. I hold a
         professional web developer certification obtained in 2024, and I've
         chosen to continue learning on my own to specialize in the React.js

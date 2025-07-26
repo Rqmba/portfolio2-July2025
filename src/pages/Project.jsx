@@ -1,9 +1,8 @@
 import ProjectCard from "../components/ProjectCard";
-import { Link } from "react-router-dom";
 
 function Project({ dataProject }) {
   return (
-    <section id="projects" className="sectionWrapper">
+    <section id="projects">
       <h2 style={{ textAlign: "center" }}>Works</h2>
       <div className="projectContainer">
         {dataProject.slice(0, 3).map((data, index) => (
@@ -11,14 +10,14 @@ function Project({ dataProject }) {
         ))}
       </div>
       <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <Link to="/projects" className="btnSocial">
+        <a href="/projects" className="btnSocial">
           View Full Projects
           <img
-            alt="arrow up "
+            alt="arrow up"
             src="/assets/arrow_up.svg"
-            style={{ width: "18px" }}
+            style={{ width: "18px", marginLeft: "8px" }}
           />
-        </Link>
+        </a>
       </div>
     </section>
   );

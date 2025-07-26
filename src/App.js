@@ -1,13 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import projects from "./data/project";
 import Project from "./pages/Project";
-import ProjectPage from "./pages/ProjectPage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import SocialLinks from "./components/SocialLinks";
+import projects from "./data/project";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,29 +15,46 @@ function App() {
   }, [darkMode]);
 
   return (
-    <Router>
-      <div>
-        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Home />
-                <Project dataProject={projects} />
-                <About />
-                <Contact />
-              </>
-            }
-          />
-          <Route
-            path="/projects"
-            element={<ProjectPage dataProjects={projects} />}
-          />
-        </Routes>
-        <Footer />
+    <div className="rootContainer">
+      <div className="backgroundEffect" />
+
+      <div className="contentWrapper">
+        <div className="layoutContainer">
+          {/* LEFT BLOCK (FIXED) */}
+          <header className="leftColumn">
+            <div>
+              {/* Toggle mode */}
+              <div
+                className="modeToggle"
+                onClick={() => setDarkMode(!darkMode)}
+              >
+                <img
+                  src={darkMode ? "/assets/sun.svg" : "/assets/moon.svg"}
+                  alt="Toggle dark mode"
+                  style={{ width: "24px" }}
+                />
+              </div>
+
+              {/* Intro / H1 / Description / Links */}
+              <Home />
+            </div>
+
+            {/* Social Links */}
+            <div className="socialWrapper">
+              <SocialLinks />
+            </div>
+          </header>
+
+          {/* RIGHT BLOCK (SCROLLABLE) */}
+          <main className="rightContent" id="content">
+            <Project dataProject={projects} />
+            <About />
+            <Contact />
+            <Footer />
+          </main>
+        </div>
       </div>
-    </Router>
+    </div>
   );
 }
 
